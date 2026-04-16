@@ -52,6 +52,12 @@ docker compose up --build
 | REST API | http://localhost:8000/api/v1 |
 | PostgreSQL | localhost:5432 |
 
+> **Если порты заняты** (например, локальный PostgreSQL на 5432), можно переопределить:
+> ```bash
+> DB_EXTERNAL_PORT=5433 FRONTEND_PORT=3010 docker compose up --build
+> ```
+> Тогда UI будет на http://localhost:3010, БД на порту 5433.
+
 ### Без Docker (локальная разработка)
 
 **Backend:**

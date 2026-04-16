@@ -27,6 +27,10 @@ frontend/dist/
 # Docker
 pgdata/
 
+# Claude
+.claude/
+.claude*
+
 # OS
 .DS_Store
 Thumbs.db

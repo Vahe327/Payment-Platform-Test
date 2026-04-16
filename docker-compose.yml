@@ -13,7 +13,7 @@ services:
       timeout: 5s
       retries: 15
     ports:
-      - "5433:5432"
+      - "${DB_EXTERNAL_PORT:-5432}:5432"
 
   backend:
     build:
@@ -37,7 +37,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "3010:80"
+      - "${FRONTEND_PORT:-3000}:80"
 
 volumes:
   pgdata:
