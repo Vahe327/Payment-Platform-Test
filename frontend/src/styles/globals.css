@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --surface: #ffffff;
+  --border-color: #e5e5e5;
+  --muted: #71717a;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --surface: #111111;
+  --border-color: #1f1f1f;
+  --muted: #a1a1aa;
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+}
+
+body {
+  @apply bg-background text-foreground font-sans antialiased;
+  margin: 0;
+}
+
+* {
+  @apply border-border;
+}
+
+:focus-visible {
+  @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+}
