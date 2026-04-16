@@ -15,9 +15,14 @@ export default function Login() {
           <p className="text-sm text-muted mt-1">Sign in to your account</p>
         </div>
         <LoginForm mode="user" />
-        <Link to="/admin/login" className="text-xs text-muted hover:text-accent transition-colors">
-          Admin login
-        </Link>
+        <div className="flex flex-col items-center gap-2">
+          <Link to="/register" className="text-xs text-muted hover:text-accent transition-colors">
+            Don't have an account? Sign up
+          </Link>
+          <Link to="/admin/login" className="text-xs text-muted hover:text-accent transition-colors">
+            Admin login
+          </Link>
+        </div>
       </div>
     </div>
   );

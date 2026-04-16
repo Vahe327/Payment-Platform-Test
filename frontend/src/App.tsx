@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "@/components/layout/ProtectedRoute";
 import Login from "@/pages/Login";
+import Register from "@/pages/Register";
 import AdminLogin from "@/pages/AdminLogin";
 import NotFound from "@/pages/NotFound";
 import Dashboard from "@/pages/user/Dashboard";
@@ -17,6 +18,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/admin/login" element={<AdminLogin />} />
 
         <Route element={<ProtectedRoute requiredRole="user" />}>

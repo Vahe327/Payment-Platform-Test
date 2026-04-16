@@ -9,12 +9,15 @@ export function ProtectedRoute({ requiredRole }: { requiredRole: string }) {
   const { isAuthenticated, role } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  if (!isAuthenticated) {
+  const token = isAuthenticated ? role : localStorage.getItem("role");
+  const hasToken = isAuthenticated || !!localStorage.getItem("access_token");
+
+  if (!hasToken) {
     return <Navigate to="/login" replace />;
   }
 
-  if (role !== requiredRole) {
-    return <Navigate to={role === "admin" ? "/admin" : "/dashboard"} replace />;
+  if (token !== requiredRole) {
+    return <Navigate to={token === "admin" ? "/admin" : "/dashboard"} replace />;
   }
 
   return (
